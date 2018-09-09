@@ -23,7 +23,7 @@ There are 2 key concepts to learn in Vert.x :
 
 ## Verticle
 The unit of deplyment in Vert.x is called a _verticle_. A verticle processes inconming events over a _event-loop_, where events can be anything like receiving network buffers, timing events, or messages sent by other verticles. Event-loops are typical in asynchronous programming models :
- ![Event-loops](/image/vertx/event-loop-model.PNG)
+ ![Event-loops](/_image/vertx/event-loop-model.PNG)
 
  Each event shall be processed in a reasonable amount of time to not block the event loop. This means that thread blocking operations shall not be performed while executed on the event loop.
 
@@ -32,13 +32,13 @@ The unit of deplyment in Vert.x is called a _verticle_. A verticle processes inc
 Every event loop is attached to a thread. By default Vert.x attaches 2 event loops per CPU core thread.
 
 A verticle can be passed some configuration (e.g., credentials, network addresses, etc) and a verticle can be deployed several times :
-![verticle-deplyment](/image/vertx/verticle-deploy-model.PNG)
+![verticle-deplyment](/_image/vertx/verticle-deploy-model.PNG)
 
 When a verticle opens a network server and is deployed more than once, then the events are being distibuted to the verticle instances in a round-robin fashion which is very useful for maximizing CPU usage with lots of concurrent networked requests. Verticles have a simple start/stop life-cycle, and verticles can deploy other verticles.
 
 ## Event bus
 An exemple :
-![event bus](/image/vertx/Event-bus-model.PNG)
+![event bus](/_image/vertx/Event-bus-model.PNG)
 
 The event-bus allows passing any kind of data. Message can be sent to destinations which are free-form strings. The event bus supports the following communication patterns:
 1. point-to-point messaging
