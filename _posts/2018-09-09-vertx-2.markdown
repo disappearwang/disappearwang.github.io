@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reading Notes - Vert.x - 1 - fr"
+title: "Reading Notes - Vert.x - 2 - fr"
 date: 2018-09-09 17:35:00 +0200
 categories: [architecture, book]
 ---
