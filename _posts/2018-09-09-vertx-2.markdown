@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Reading Notes - Vert.x - 1 - fr"
+date: 2018-09-09 17:35:00 +0200
+categories: [architecture, book]
+---
+[A gentle guide to asynchronous programming with Eclipse Vert.x for Java developers](https://vertx.io/docs/guide-for-java-devs/guide-for-java-devs.pdf)
+_Julien Ponge, Thomas Segismont and Julien Viet
+version 1.3.0, June 5th 2018_
+
+#Chapitre 2-3
+
+## Verticle
+
+Il existe deux formatss de start/stop méthodes : l'un avec non-argument et l'autre avec un _future_ objet. la non-argument variante implique que l'initialisation de verticle ou house-keeping phase réusissent tjs sauf un exception est jeté. Pour certains cas d'initialisation/cleanup, asynchronous est potentiellement requis. C'est là où on s'intérrese avec la variante avec un _future_ objet.
+
+## future
+
+Le future de vert.x n'est pas cel de JDK : il peut être composé et queri dans une non-blocké manière.
+
+L'APIs de vert.x core se base sur callback afin de notifier les aynschron events.
+
+Le choix de callback est intéressant car il permet d'utiliser les différents abstractions de programmtion. Callback permet les différent implémentation du model qui s'entendent bien avec l'asynchron programming : reactive extensions (via RxJava), promises and futures, fibers(en utilisant bytecode instrumentation), etc.
+
+## Multiple verticles
+Multiple verticles peuvent partager la même TCP porte. Les connexion en entré sont distribuées sous round-robin manière par le acception threads. Il n'a pas besoin un load balancer.
