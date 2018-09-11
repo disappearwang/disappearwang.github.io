@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reading Notes - Vert.x - 2 - fr"
-date: 2018-09-09 17:35:00 +0200
+date: 2018-09-10 23:00:00 +0200
 categories: [architecture, book]
 ---
 [A gentle guide to asynchronous programming with Eclipse Vert.x for Java developers](https://vertx.io/docs/guide-for-java-devs/guide-for-java-devs.pdf)
